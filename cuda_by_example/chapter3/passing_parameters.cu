@@ -20,6 +20,6 @@ int main(void)
                             cudaMemcpyDeviceToHost));
     printf("2 + 7 = %d\n", c);
     cudaFree(dev_c);
-    
+
     return 0;
 }
