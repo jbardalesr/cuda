@@ -29,3 +29,17 @@ source .bashrc
 # check
 nvcc --version
 ```
+
+## Install OpenGL in WSL
+1. Install OpenGL in Ubuntu for the book Cuda By Example
+```
+sudo apt-get install cmake libx11-dev xorg-dev libglu1-mesa-dev freeglut3-dev libglew1.5 libglew1.5-dev libglu1-mesa libglu1-mesa-dev libgl1-mesa-glx libgl1-mesa-dev libglfw3-dev libglfw3
+```
+
+2. Compile with `g++`
+```
+g++ julia_set.cpp -lGL -std=c++11 -Wall -lGL -lGLU -lglut -lGLEW -lglfw -lX11 -lXxf86vm -lXrandr -lpthread -lXi -ldl -lXinerama -lXcursor
+```
+
+##  Notes
+- `-Wall` enables all compiler's warning messages. For example `julia_set.c:12:2: warning: unused variable 'x'`

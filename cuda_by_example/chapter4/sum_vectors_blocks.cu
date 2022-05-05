@@ -47,7 +47,7 @@ int main(void)
     HANDLE_ERROR(cudaMemcpy(dev_a, a, sizeof(int) * N, cudaMemcpyHostToDevice));
     HANDLE_ERROR(cudaMemcpy(dev_b, b, sizeof(int) * N, cudaMemcpyHostToDevice));
 
-    // execute the device code
+    // execute the device code, N blocks with one thread each
     add<<<N, 1>>>(dev_a, dev_b, dev_c);
 
     // copy the array 'c' back from the GPU to the CPU
